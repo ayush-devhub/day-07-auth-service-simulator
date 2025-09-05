@@ -108,7 +108,7 @@ public class AuthService {
      * @return unmodifiable users list (for listing).
      */
     public List<User> getAllUsers() {
-        return Collections.unmodifiableList(users); 
+        return Collections.unmodifiableList(users);
     }
 
 
