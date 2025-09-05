@@ -37,6 +37,10 @@ public class User {
         return salt;
     }
 
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
     /** @return unmodifiable view of roles */
     public Set<String> getRoles() {
         return Collections.unmodifiableSet(roles);
