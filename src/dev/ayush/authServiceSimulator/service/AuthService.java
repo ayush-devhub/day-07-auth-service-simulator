@@ -51,7 +51,7 @@ public class AuthService {
             if (u.getEmail().equalsIgnoreCase(email)) user = u;
         }
 
-        if (user == null) throw new RuntimeException("Email not registered. ");
+        if (user == null) throw new RuntimeException("Email not registered.");
 
         Boolean logged = hasher.verify(rawPassword, user.getSalt(), user.getPasswordHash());
         if (logged) {
@@ -88,13 +88,15 @@ public class AuthService {
         if (user != null) {
             if (hasher.verify(oldRaw, user.getSalt(), user.getPasswordHash())) {
                 user.setPasswordHash(hasher.hash(newRaw, user.getSalt()));
+                return true;
             }else{
                 System.out.println("Incorrect password. Try again.");
+                return false;
             }
         }else{
             System.out.println("Email not registered: " + email);
+            return false; 
         }
-        return false;
     }
 
     private User getUserByEmail(String email) {
