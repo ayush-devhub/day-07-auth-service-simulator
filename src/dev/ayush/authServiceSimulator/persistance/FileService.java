@@ -31,6 +31,7 @@ public class FileService {
                 }
                 bufferedWriter.newLine();
             }
+            System.out.println("Users saved to " + usersPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
