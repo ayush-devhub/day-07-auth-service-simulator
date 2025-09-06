@@ -24,6 +24,10 @@ public class AuthService {
         users = new ArrayList<>();
     }
 
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
     /**
      * Register new user; returns created user or throws on duplicate email.
      */
@@ -95,7 +99,7 @@ public class AuthService {
             }
         }else{
             System.out.println("Email not registered: " + email);
-            return false; 
+            return false;
         }
     }
 
