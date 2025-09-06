@@ -31,11 +31,11 @@ public class AuthSimulatorApp {
      */
     private static void runLoop(AuthController controller) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.print("""
+        System.out.print("""
                     ===== Auth Service Simulator =====
                     Type 'HELP' for commands. Type 'EXIT' to quit.
                     """);
+        while (true) {
             System.out.print("> ");
             String line = scanner.nextLine().trim();
             controller.handle(line);

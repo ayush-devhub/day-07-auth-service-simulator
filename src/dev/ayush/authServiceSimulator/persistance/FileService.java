@@ -29,7 +29,7 @@ public class FileService {
                 for (String role : user.getRoles()) {
                     bufferedWriter.write(role + ";");
                 }
-                bufferedWriter.newLine();
+                bufferedWriter.newLine();   
             }
             System.out.println("Users saved to " + usersPath);
         } catch (IOException e) {
